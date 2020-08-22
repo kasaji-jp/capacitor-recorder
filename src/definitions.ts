@@ -6,4 +6,5 @@ declare module '@capacitor/core' {
 
 export interface RecorderPlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
+  startRecording(options: { value: string }): Promise<{ value: string }>;
 }

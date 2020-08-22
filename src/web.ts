@@ -13,6 +13,11 @@ export class RecorderWeb extends WebPlugin implements RecorderPlugin {
     console.log('ECHO', options);
     return options;
   }
+
+  async startRecording(options: { value: string }): Promise<{ value: string }> {
+    console.log('started');
+    return options;
+  }
 }
 
 const Recorder = new RecorderWeb();

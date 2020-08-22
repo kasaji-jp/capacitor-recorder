@@ -15,5 +15,7 @@ public class Recorder: CAPPlugin {
         ])
     }
     
-    
+    @objc func startRecording(_ call: CAPPluginCall) {
+        call.success(["value": "started"])
+    }
 }
