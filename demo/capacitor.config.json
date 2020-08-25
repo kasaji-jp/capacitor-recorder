@@ -1,0 +1,12 @@
+{
+  "appId": "com.demo.recorder",
+  "appName": "demo",
+  "bundledWebRuntime": true,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
