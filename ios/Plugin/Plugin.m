@@ -5,4 +5,8 @@
 // each method the plugin supports using the CAP_PLUGIN_METHOD macro.
 CAP_PLUGIN(Recorder, "Recorder",
            CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(initialize, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(record, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(play, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(export, CAPPluginReturnPromise);
 )
