@@ -14,7 +14,22 @@ export class RecorderWeb extends WebPlugin implements RecorderPlugin {
     return options;
   }
 
-  async startRecording(options: { value: string }): Promise<{ value: string }> {
+  async initialize(options: { value: string }): Promise<{ value: string }> {
+    console.log('started');
+    return options;
+  }
+
+  async record(options: { value: string }): Promise<{ value: string }> {
+    console.log('started');
+    return options;
+  }
+
+  async play(options: { value: string }): Promise<{ value: string }> {
+    console.log('started');
+    return options;
+  }
+
+  async export(options: { value: string }): Promise<{ value: string }> {
     console.log('started');
     return options;
   }
