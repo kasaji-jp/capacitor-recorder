@@ -10,4 +10,6 @@ export interface RecorderPlugin {
   record(options: { value: string }): Promise<{ value: string }>;
   play(options: { value: string }): Promise<{ value: string }>;
   export(options: { value: string }): Promise<{ value: string }>;
+  hasRecordingFile(options: { value: string }): Promise<{ value: string }>;
+  removeFile(options: { value: string }): Promise<{ value: string }>;
 }
