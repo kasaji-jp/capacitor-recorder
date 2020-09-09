@@ -9,4 +9,6 @@ CAP_PLUGIN(Recorder, "Recorder",
            CAP_PLUGIN_METHOD(record, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(play, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(export, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(hasRecordingFile, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(removeFile, CAPPluginReturnPromise);
 )

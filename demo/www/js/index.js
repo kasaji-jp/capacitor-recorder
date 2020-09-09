@@ -36,6 +36,20 @@ var onLoad = () => {
       console.warn(data);
     });
   });
+
+  var hasRecordingFileBtn = document.querySelector('.hasRecordingFileBtn');
+  hasRecordingFileBtn.addEventListener('click', () => {
+    Recorder.hasRecordingFile().then((data) => {
+      window.alert(data.exists);
+    });
+  });
+
+  var removeFileBtn = document.querySelector('.removeFileBtn');
+  removeFileBtn.addEventListener('click', () => {
+    Recorder.removeFile().then(() => {
+      window.alert("removed");
+    });
+  });
 };
 
 window.addEventListener('load', onLoad, false);
