@@ -103,6 +103,7 @@ public class Recorder: CAPPlugin {
             call.resolve(["exists": fileExists])
             
             if fileExists == false {
+                call.resolve(["status": "file does not exist"])
                 return
             }
             
