@@ -97,6 +97,15 @@ public class Recorder: CAPPlugin {
     
     @objc func play(_ call: CAPPluginCall) {
         if !isPlaying {
+            
+            let url = recordingDir.appendingPathComponent("recording.m4a")
+            let fileExists = FileManager.default.fileExists(atPath: url.path)
+            call.resolve(["exists": fileExists])
+            
+            if fileExists == false {
+                return
+            }
+            
             isPlaying = true
             do {
                 let audioFile = try AVAudioFile(forReading: recordingDir.appendingPathComponent("recording.m4a"))
@@ -140,13 +149,11 @@ public class Recorder: CAPPlugin {
     @objc func hasRecordingFile(_ call: CAPPluginCall){
         let url = recordingDir.appendingPathComponent("recording.m4a")
         let fileExists = FileManager.default.fileExists(atPath: url.path)
-//        let fileExists = FileManager.default.fileExists(atPath: recordingDir.absoluteString + "recording.m4a")
         call.resolve(["exists": fileExists])
     }
 
     @objc func removeFile(_ call: CAPPluginCall) {
         let url = recordingDir.appendingPathComponent("recording.m4a")
-//        let path = recordingDir.absoluteString + "recording.m4a"
         if FileManager.default.fileExists(atPath: url.path) {
             do{
                 try FileManager.default.removeItem(atPath: url.path)
